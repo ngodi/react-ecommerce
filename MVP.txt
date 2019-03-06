@@ -1,0 +1,22 @@
+database setup
+  connect to database
+  design pages
+  link pages
+  set operations
+  search,add,remove,checkout
+  login/logout
+
+
+
+-get items from database
+-view items
+-categorize items
+-display by category
+-search items
+-paging
+-more details by item
+-add items to cart
+-register login
+-checkout and make payment
+-confirmation email of purchase
+-admin: add remove category/department/item/details
