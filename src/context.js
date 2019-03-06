@@ -26,9 +26,9 @@ handleDetail = () =>{
     console.log('hello from detail');
 }
 
-addToCart = () =>{
-    console.log('hello from add to Cart');
-}
+addToCart = (id) =>{
+    alert(`hello from add to cart.id is ${id}`);
+};
 
 
     render() {
