@@ -82,11 +82,26 @@ increment =(id) =>{
        return {cart:[...tempCart]}
    },()=>{this.addTotals()})
 }
+//decrement
 
 decrement =(id) =>{
-    console.log("This is the decrement method");
-}
+    let tempCart = [...this.state.cart];
+    const selectedProduct = tempCart.find(item => item.id ===id)
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
 
+    product.count = product.count - 1;
+    if(product.count === 0){
+        this.removeItem(id)
+    }else{
+        product.total = product.count*product.price;
+        this.setState(()=>{
+            return {cart:[...tempCart]}
+        },()=>{this.addTotals()})
+    }
+    
+}
+//remove item method
 removeItem = (id) =>{
 let tempProducts = [...this.state.products];
 let tempCart = [...this.state.cart];
@@ -109,12 +124,14 @@ this.setState(()=>{
   }
   );
 };
+//clear cart method
 
 clearCart = () =>{
    this.setState(()=>{
        return {cart:[]};
    },()=>{
        this.setProducts();
+       this.addTotals();
    });
 };
 
